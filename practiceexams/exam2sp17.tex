@@ -1,0 +1,384 @@
+\documentclass[handout]{ximera}
+\input{../preamble.tex}
+\author{Mary E. Pilgrim, and implemented in Ximera by Ben Sencindiver}
+\outcome{Exercises: First Derivative Test}
+   
+
+\title{First Derivative Test Exercises}
+
+\begin{document}
+\begin{abstract}
+  Here you can work on a practice exam 2 test. This exam was administed in Spring 2017.
+\end{abstract}
+\maketitle
+
+
+\begin{center}
+\Large{Math 160 Calculus for Physical Scientists I \\ Exam 2 - Version 1 \\ March 9, 2017, 5:00-6:50 pm}
+\end{center}
+
+
+%%MC%%
+\begin{problem}
+If the radius of a circle increases from $r=A$ to $r=B$, then the average rate of change of the area of the circle is
+
+\begin{multipleChoice}
+	\choice{$\pi(B^2-A^2)$}
+	\choice{$\pi(B-A)$}
+	\choice{$\displaystyle\pi\left(B^2+A^2\right)$}
+	\choice[correct]{$\displaystyle\pi\left(B+A\right)$}
+	\choice{None of the above}
+\end{multipleChoice}
+\end{problem}
+
+
+%%%%% Here!!!!1
+
+\begin{problem}
+We know that $f(2)=4$ and $f'(2)=3$, then the value of $\displaystyle\frac{d}{dx}\left(\frac{3x^2}{f(x)}\right)\bigg|_{x=2}$
+
+%%% Add Answer here.
+\begin{multipleChoice}
+	\choice{$\displaystyle\frac{21}{4}$}
+	\choice{$\displaystyle\frac{4}{3}$}
+	\choice[correct]{$\displaystyle\frac{3}{4}$}
+	\choice{4}
+	\choice{None of the above.}\\
+\end{multipleChoice}
+\end{problem}
+
+
+%%%% Add the solution %%%%
+\begin{problem}
+If $h'(t)$ is continuous on $(-\infty,\infty)$, then 
+\begin{multipleChoice}
+	\choice{$\displaystyle\lim_{t\rightarrow100}h(t)=h'(100)$.}
+    \choice[correct]{$\displaystyle \lim_{t\rightarrow100} h(t)= h(100)$.}
+	\choice{$\displaystyle\lim_{t\rightarrow100}h(t)$ \hspace{0.2in} may not exist.}
+	\choice{$\displaystyle\lim_{h\rightarrow0}\frac{h(100+h)-h(100)}{h}$ may not exist.}
+	\choice{None of the above.}
+\end{multipleChoice}
+\end{problem}
+
+%%VELOCITY - MC%%
+\begin{problem}
+The function $f(t)$ represents the distance of a vehicle moving along a straight road from its starting point at time $t$. 
+
+Below are three graphs of the derivative, $f'(t)$, of the distance function. Which graph best matches each of the following vehicle scenarios?
+
+Graph 1: \includegraphics[scale=0.25]{Bus-A.png}
+
+Graph 2: \includegraphics[scale=0.25]{Car-A.png}
+
+Graph 3: \includegraphics[scale=0.25]{Car-traffic-A.png}
+
+
+\begin{question}
+\underline{Scenario 1}: A car in heavy traffic conditions.
+\begin{multipleChoice}
+    \choice{Graph 1}
+    \choice{Graph 2}
+    \choice[correct]{Graph 3}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+\underline{Scenario 2}: A bus on a popular route, with no traffic.
+\begin{multipleChoice}
+    \choice[correct]{Graph 1}
+    \choice{Graph 2}
+    \choice{Graph 3}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+\underline{Scenario 3}: A car with no traffic and all green lights.
+\begin{multipleChoice}
+    \choice{Graph 1}
+    \choice[correct]{Graph 2}
+    \choice{Graph 3}
+\end{multipleChoice}
+\end{question}
+
+\end{problem}
+
+
+%%CURVE SKETCH%%
+\begin{problem}
+Below is the graph of the function, $f(x)$. 
+
+\bigskip
+
+\includegraphics[scale=0.4]{CurveSketch-Ex2sp17.pdf}
+
+Of all the properties listed below, choose all properties that are reflected in the graph of $f(x)$.
+\begin{multicols}{2}
+\begin{selectAll}
+	\choice{$f(x)$ is not continuous at $x=-4$}
+	\choice[correct]{$f(x)$ is not continuous at $x=-1$}
+	\choice{$f(x)$ is not continuous at $x=0$}
+	\choice[correct]{$f(x)$ is not differentiable at $x=-4$}
+	\choice[correct]{$f(x)$ is not differentiable at $x=-1$}
+	\choice[correct]{$f(x)$ is not differentiable at $x=0$}
+	\choice[correct]{$f'(x)=0$ at $x=-2$}
+	\choice{$f'(x)=0$ at $x=0$}
+	\choice[correct]{$f'(x)<0$ for $-4<x<-2$}
+	\choice[correct]{$f'(x)<0$ for $-2<x<-1$}
+	\choice[correct]{$f'(x)<0$ for $-1<x<0$}
+	\choice{$f'(x)<0$ for $x>0$}
+	\choice{$f'(x)>0$ for $-4<x<-2$}
+	\choice{$f'(x)>0$ for $-2<x<-1$}
+	\choice{$f'(x)>0$ for $-1<x<0$}
+	\choice[correct]{$f'(x)>0$ for $x>0$}
+	\choice{$y=4$ is an absolute maximum}
+	\choice{$y=3$ is an absolute maximum}
+	\choice{$y=-0.5$ is an absolute minimum}
+	\choice[correct]{$y=-1.5$ is an absolute minimum}
+\end{selectAll}
+\end{multicols}
+\end{problem}
+
+%%DERIVATIVES%%
+\begin{problem}
+Use $g(t)=\tan(f(t))$ to answer the following. When refering to $f'(t)$, use $d(t)$.
+
+	\begin{question}
+	Find the derivative of $g(t)$.
+	
+    \[
+    \answer[given]{(\sec(f(t)))^2 * d(t)}
+    \]
+    \end{question}
+    
+	
+	\begin{question}
+    Using your result from part (a) and the information provided in the table below, find the value of $g'(\pi)$. Circle the correct answer.
+
+    \begin{tabular}{c|c|c}
+	\@ & $f(t)$ & $f'(t)$\\
+	\hline
+	\hline
+	\@ & \@ & \@ \\
+	$t=0$ & $2$ & $\displaystyle-\frac{1}{2}$\\
+	\@ & \@ & \@ \\
+	\hline
+	\@ & \@ & \@ \\
+	$t=\pi$ & $\displaystyle\frac{\pi}{3}$ & $\pi$\\
+	
+    \end{tabular}
+	
+    \begin{multipleChoice}
+	    \choice[correct]{$g'(\pi)=4\pi$}
+	    \choice{$g'(\pi)=4$}
+	    \choice{$g'(\pi)=\pi$}
+	    \choice{$g'(\pi)=0$}
+	    \choice{$g'(\pi)=1$}
+    \end{multipleChoice}
+    \end{question}
+\end{problem}
+
+
+
+\begin{problem}
+Suppose that $f(t)=3t$, then $g(t)=\tan(3t)$.\\
+
+What is $g''(t)$? Circle the correct answer.
+
+\begin{multipleChoice}
+	\choice{$3\sec^2(3t)$}
+	\choice[correct]{$18\sec^2(3t)\tan(3t)$}
+	\choice{$2\sec^2(3t)\tan(3t)$}
+	\choice{$6\sec^2(3t)\tan(3t)$}
+	\choice{$2\sec(3t)$}
+\end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}
+Below is the graph of the implicitly defined function $\displaystyle\sin \left(\pi y\right)+3y^2=3x^3$. You may leave values in exact form. If you choose to use decimals, round to 3 decimal places.
+
+
+	\begin{question}
+	It can be seen in the picture that the point $(1,-1)$ is on the graph of $\displaystyle\sin \left(\pi y\right)+3y^2=3x^3$. Algebraically verify this fact. (This question cannot be validated in this system).\\
+    \begin{freeResponse}
+    \end{freeResponse}
+
+    \includegraphics[scale=0.4]{Exam2-ImpDiff2.pdf}
+    \end{question}
+    
+	
+	\begin{question}
+    Use calculus to find $\displaystyle\frac{dy}{dx}$.\\
+    
+    \[
+    \displaystyle \dfrac{dy}{dx} = \answer[given]{\dfrac{9x^2}{\pi *\cos(\pi*y) + 6y}}
+    \]
+    \end{question}
+    
+
+	\begin{question}
+    Find the slope of the line tangent to $\displaystyle\sin \left(\pi y\right)+3y^2=3x^3$ at the point $(1,-1)$.\\
+    
+    The slope of the line is $\answer[given]{\dfrac{9}{-1(\pi +6)}}$.
+    \end{question}
+	
+	\begin{question}
+    Find the equation of the line tangent to $\displaystyle\sin \left(\pi y\right)+3y^2=3x^3$ at the point $(1,-1)$. \\
+    
+    In point-slope form, the equation of the line tangent to the curve at $(1,-1)$ is \\
+    
+    \[
+    y - \answer[given]{-1} = \answer[given]{\dfrac{9}{-1(\pi +6)}} ( x - \answer[given]{1}).
+    \]
+    \end{question}
+\end{problem}
+
+%%TRUE FALSE%%
+\begin{problem}
+Indicate whether each of the following statements is \textbf{True} or \textbf{False}.
+
+If the statement is true, explain how you know it's true.\\
+
+
+
+If it is false, give a counterexample \textbf{and} explain why it is a counterexample. (A counterexample is an example of a function for which the ``if'' part of the statement is true, but the ``then'' part is false.) \underline{A graph with an explanation can be used as a counterexample.}\\
+
+
+\begin{question}
+If $f$ is continuous at $x=1$, then $f$ is differentiable at $x=1$
+    \begin{multipleChoice}
+	    \choice{True}
+	    \choice[correct]{False}
+    \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+	Given that $f(x)$ is continuous on the interval $(1,3)$, then $f(x)$ attains an absolute maximum on the interval $(1,3)$.\\
+    
+    \begin{multipleChoice}
+	    \choice{True}
+	    \choice[correct]{False}
+    \end{multipleChoice}
+\end{question}
+
+
+\begin{question}
+    Two different functions, $f(x)$ and $g(x)$, cannot have the same derivative functions unless both $f(x)$ and $g(x)$ are linear functions with the same slope.
+    \begin{multipleChoice}
+	    \choice{True}
+	    \choice[correct]{False}
+    \end{multipleChoice}
+\end{question}
+
+\end{problem}
+
+
+\begin{problem}
+Consider the function $f(x)$ given by
+
+$$f(x) = \begin{cases} \displaystyle -x^3, & x \leq 0 \\ x^3, & x >0 \end{cases}$$
+\end{problem}
+
+\begin{problem}
+Use the \textbf{definition of the derivative} of a function at a point (as a limit) to determine whether $f(x)$ is differentiable at $x=0$. Show details of how you made this determination. Evaluate any limits involved algebraically (without using a calculator).
+
+If $f'(0)$ exists, fill in the blank with its value. If not, draw a smiley face in the blank. 
+\[
+\displaystyle \lim_{h\to 0^-} \answer[given]{\dfrac{-h^3}{h}}
+\]
+
+\[
+\displaystyle \lim_{h\to 0^+} \answer[given]{\dfrac{h^3}{h}}
+\]
+
+so
+
+\[
+f'(0) = \answer[given]{0}
+\]
+\end{problem}
+
+% Not sure how to make this into a question.
+%
+%\item Sketch a graph of $f(x)$ on the grid provided.
+%
+%\includegraphics[scale=0.4]{2X8.pdf}
+
+%\begin{problem}
+%Describe how your graph in (b) supports the answer you found in (a).
+%
+%\end{problem}
+
+\begin{problem}
+There are three graphs plotted in the coordinate system below ($f(x)$, $f'(x)$, and $f''(x)$). 
+
+
+\includegraphics[scale=.12]{SVA-label.png}
+
+
+Which graph is $f(x)$? Which graph is $f'(x)$? Which graph is $f''(x)$? Give reasons for your answers in sentences. Your explanation should include a discussion of slope with regard to each graph.
+
+\begin{question}
+Graph 1 is
+\begin{multipleChoice}
+    \choice{$f(x)$}
+    \choice[correct]{$f'(x)$}
+    \choice{$f''(x)$}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Graph 2 is
+\begin{multipleChoice}
+    \choice[correct]{$f(x)$}
+    \choice{$f'(x)$}
+    \choice{$f''(x)$}
+\end{multipleChoice}
+\end{question}
+
+\begin{question}
+Graph 3 is
+\begin{multipleChoice}
+    \choice{$f(x)$}
+    \choice{$f'(x)$}
+    \choice[correct]{$f''(x)$}
+\end{multipleChoice}
+\end{question}
+
+
+Justify your answers using complete sentences. Your justification should include a discussion of slope with regard to each graph. (Note that the response below cannot be validated as correct or incorrect.)
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\medskip
+%%DERIVATIVES%%
+(15pts - 5pts each) Calculate the indicated derivatives by using the Differentiation Rules (Theorems). Answers must be accompanied by supporting work that shows how you calculated the derivative. \textbf{You do not need to simplify your answers on these problems.} If you do simplify an answer, you must simplify correctly. 
+
+\begin{problem}
+$\displaystyle \frac{d}{dx}\left(\frac{3}{x^3}+\cos(x)+\pi^4\right)$
+\[
+= \answer{\dfrac{-9}{x^4} - \sin(x)}
+\]
+
+\end{problem}
+
+\begin{problem}
+$\displaystyle \frac{d}{d\theta}\left[\frac{5\theta}{\sin(\theta)+2}\right]$ \\
+(Instead of using $\theta$ in your answer, use $t$ in the answer field below.)\\
+\[
+= \answer{\dfrac{5*\sin(t) + 10 - 5*t*\cos(t)}{(\sin(t) + 2)^2}}
+\]
+\end{problem}
+
+
+\begin{problem}
+Find $g'(t)$ given $\displaystyle g(t)=(3t-t^{4/3})(4\sqrt{t}+2t^3)$
+\[
+= \answer{12t^(3/2) + 6t^4 - 4t^(11/6) - 2t^(13/3)}
+\]
+\end{problem}
+
+
+\end{document}
