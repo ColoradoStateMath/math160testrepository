@@ -4,20 +4,10 @@
 
 \title[Dig-In]{The First Derivative Test}
 
-\outcome{Define a critical point.}
-\outcome{Find critical points.}
-\outcome{Define absolute maximum and absolute minimum.}
-\outcome{Find the absolute max or min of a continuous function on a closed interval.}
-\outcome{Define local maximum and local minimum.}
-\outcome{Compare and contrast local and absolute maxima and minima.}
 \outcome{Identify situations in which an absolute maximum or minimum is guaranteed.}
 \outcome{Classify critical points.}
 \outcome{State the First Derivative Test.}
 \outcome{Apply the First Derivative Test.}
-\outcome{State the Second Derivative Test.}
-\outcome{Apply the Second Derivative Test.}
-\outcome{Define inflection points.}
-\outcome{Find inflection points.}
   
 \begin{document}
 \begin{abstract}
@@ -41,7 +31,7 @@ So how exactly does the derivative tell us whether there is a maximum,
 minimum, or neither at a point?  That's where the \textit{first derivative test} comes into play.
 
 \begin{theorem}[First Derivative Test]\index{first derivative test}\label{T:fdt}
-Suppose that $f$ is continuous on an interval, and that $f'(a)=0$ for
+Suppose that $f$ is continuous on an interval, and that $f'(a)=0$ or $f'(a)$ is undefined for
 some value of $a$ in that interval.
 \begin{itemize}
 \item If $f'(x)>0$ to the left of $a$ and $f'(x)<0$ to the right of
@@ -77,7 +67,7 @@ f'(x) &= \answer[given]{x^3+x^2-2x} \\
 &=x(\answer[given]{x^2+x-2})\\
 &=x(x+2)\answer[given]{(x-1)}.
 \end{align*}
-So the critical points (when $f'(x)=0$) are when $x=-2$, $x=0$, and
+So the critical points (when $f'(x)=0$ or is undefined) are when $x=-2$, $x=0$, and
 $x=1$. Now we can check points \textbf{between} the critical points to find
 when $f'(x)$ is increasing and decreasing:
 \begin{align*}
@@ -170,12 +160,10 @@ are at $x=-2$ and $x=1$, see the graphs of of $f(x) =x^4/4 + x^3/3
 \end{explanation}
 \end{example}
 
-
-Hence we have seen that if $f'$ is zero and increasing at a point,
-then $f$ has a local minimum at the point. If $f'$ is zero and
+If you look carefully at the previous example, you'll see that if $f'$ is zero and $f'$ is increasing at a point, then $f$ has a local minimum at the point. Alternatively, if $f'$ is zero $f'$ is
 decreasing at a point then $f$ has a local maximum at the
 point. Thus, we see that we can gain information about $f$ by
-studying how $f'$ changes. This leads us to our next section.
+studying how $f'$ changes, namely whether $f'$ is increasing or decreasing.  This leads us to our next section about the concavity of $f$.
 
 
 
