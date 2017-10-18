@@ -188,8 +188,7 @@ up to down or down to up.
 
 \begin{definition}\index{inflection point}
 If the concavity of $f$ changes either from up to down
-or down to up at $x=a$ and $f$ has a tangent line at $x=a$, then $f$ has an \dfn{inflection point} of
-$(a,f(a)).$
+or down to up at $x=a$ and $f$ has a tangent line at $x=a$, then $x=a$ is an \dfn{inflection point} of $f.$
 \end{definition}
 
 It is instructive to see some examples of inflection points:
@@ -208,17 +207,17 @@ It is instructive to see some examples of inflection points:
           \addplot [very thick, penColor, smooth, domain=(0:1)] {(x-1)^2+1};
           \addplot [very thick, penColor, smooth, domain=(1:2)] {-(x-1)^2+1};
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};
-          \node at (axis cs:1,-.5) [text width=2in] {This is an inflection point. The concavity changes from concave up to concave down.};
+          \node at (axis cs:1,-.5) [text width=2in] {The concavity changes from concave up to concave down at the indicated point, so the $x$-coordinate of the point is an inflection point.};
         
           \addplot [very thick, penColor, smooth,domain=(4:5)] {-sqrt(abs(1-(x-4)))+1};
           \addplot [very thick, penColor, smooth,domain=(5:6)] {sqrt((x-4)-1)+1};
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1)};
-          \node at (axis cs:5,-.5) [text width=2in] {This is an inflection point. The concavity changes from concave up to concave down.};
+          \node at (axis cs:5,-.5) [text width=2in] {The concavity changes from concave up to concave down, so the $x$-coordinate of the point is an inflection point.};
         \end{axis}
 \end{tikzpicture}
 \end{image}
 
-It is also instructive to see some nonexamples of inflection points:
+It is also instructive to see some non-examples of inflection points:
 \begin{image}
 \begin{tikzpicture}
 	\begin{axis}[
@@ -233,11 +232,11 @@ It is also instructive to see some nonexamples of inflection points:
           ]
           \addplot [very thick, penColor2, smooth, domain=(0:2)] {-(x-1)^2+1};
           \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(1,1)};
-          \node at (axis cs:1,-.5) [text width=2in] {This is \textbf{not} an inflection point. The curve is concave down on either side of the point.};
+          \node at (axis cs:1,-.5) [text width=2in] {The $x$ value of this point is \textbf{not} an inflection point because the curve is concave down on either side of the point.};
           \addplot [very thick, penColor2, smooth,domain=(4:5)] {sqrt(abs(1-(x-4)))};
           \addplot [very thick, penColor2, smooth,domain=(5:6)] {sqrt(x-5)};
           \addplot[color=penColor2,fill=penColor2,only marks,mark=*] coordinates{(5,0)};
-          \node at (axis cs:5,-.5) [text width=2in] {This is \textbf{not} an inflection point. The curve is concave down on either side of the point.};
+          \node at (axis cs:5,-.5) [text width=2in] {The $x$ value of this point is also \textbf{not} an inflection point because the curve is concave down on either side of the point.  Also, no tangent line can be drawn to the indicated point because there is a cusp.};
         \end{axis}
 \end{tikzpicture}
 \end{image}
@@ -249,7 +248,7 @@ points.
 
 \begin{warning}
 Even if $f''(a) = 0$, the point determined by $x=a$ might \textbf{not}
-be an inflection point.
+be an inflection point.  You also need to check that concavity of $f$ changes on either side of $x=a.$  
 \end{warning}
 
 
@@ -264,7 +263,7 @@ f'(x)=\answer[given]{3x^2-1}\qquad\text{and}\qquad f''(x)=\answer[given]{6x}.
 \]
 Since $f''(0)=0$, there is potentially an inflection point at
 $x=0$. Using test points, we note the concavity does change from down
-to up, hence there is an inflection point at $x=0$. The curve is
+to up, hence $x=0$ is an inflection point of $f.$  The curve is
 concave down for all $x<0$ and concave up for all $x>0$, see the
 graphs of $f(x) = x^3-x$ and $f''(x) = 6x$.
 \begin{image}
@@ -316,13 +315,13 @@ point in question. We summarize this as the \textit{second derivative
   test}.
 
 \begin{theorem}[Second Derivative Test]\index{second derivative test}\label{T:sdt}
-Suppose that $f''(x)$ is continuous on an open interval and that
+Suppose that $f''(x)$ is continuous on an open interval containing $x=a$ and that
 $f'(a)=0$ for some value of $a$ in that interval.
 \begin{itemize}
 \item If $f''(a) <0$, then $f$ has a local maximum at $a$.
 \item If $f''(a) >0$, then $f$ has a local minimum at $a$.
 \item If $f''(a) =0$, then the test is inconclusive. In this case,
-  $f$ may or may not have a local extremum at $x=a$.
+  $f$ may or may not have a local extremum at $x=a$, and the first derivative test should be used to find out.
 \end{itemize}
 \end{theorem}
 
