@@ -25,7 +25,7 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 
 \maketitle
 
-\hspace{2cm}In class we explored a problem that involved finding the optimal dimensions for a rectangular pen that maximizes its area. Recall that the solution when all four sides of the pen will be built from a limited amount of fencing is a square. In this lab we will examine what happens if we are not restricted to a rectangle, but build the pen as a regular polygon with n sides. Our goal is finding the optimal number of sides to use when building a pen.\\
+\hspace{2cm}In class we explored a problem that involved finding the optimal dimensions for a rectangular pen that maximizes its area. In this lab we will examine what happens if we optimize the area of a regular polygonal pen with n sides. Our goal is finding the optimal number of sides to use when building a pen.\\
 
 \medskip
 %%%%%% Area of an n-sided regular polygon
@@ -77,9 +77,11 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 %\end{comment}
 
 \begin{problem}
-How many triangles will an n-sided polygon split into? $\answer[given]{n}$.
+What is the area of the blue triangle in terms of $\theta$? $\answer[given]{r^2\sin(\theta)\cos(\theta)}$.
 
-How large is the angle $\theta$ for an n-sided polygon? $\answer[given]{\pi/n}$.
+How large is the angle $\theta$ in the figure above? $\answer[given]{\pi/8}$. (Remember to use radians instead of degrees!)
+
+How large is the angle $\theta$ for a regular n-sided polygon? $\answer[given]{\pi/n}$.
 
 What is the area of the blue triangle in terms of $n$ and $r$? $\answer[given]{r^2\sin(\pi/n)\cos(\pi/n)}$.
 
@@ -90,8 +92,8 @@ Area $=\answer[given]{(n)(r^2)\sin(\pi/n)\cos(\pi/n)}$.
 
 \bigskip
 
-\hspace{2cm}Recall when finding the optimal dimensions for the bunny pen in class we found an area formula in terms of two variables. We wished to find the derivative, so we needed to rewrite the formula in terms of only one variable. We used the fact that the length of fencing was limited in order to write one variable in terms of the other. Let's try the same strategy here.\\
-\hspace{2cm}Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$.
+\hspace{2cm}Recall when finding the optimal dimensions for a rectangular pen we found an area formula in terms of two variables. We wished to find the derivative, so we needed to rewrite the formula in terms of only one variable. We used the fact that the length of fencing was limited in order to write one variable in terms of the other. Let's try the same strategy here.\\
+\hspace{2cm}Let $P$ be a constant representing the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$.
 
 \begin{problem}
 $P = \answer[given]{2(r)(n)\sin(\pi/n)}$.
@@ -100,39 +102,45 @@ Since we're keeping the perimeter $P$ constant, we can solve for $r$...
 
 $r = \answer[given]{P/(2(n)\sin(\pi/n))}$.
 
-...and use it to rewrite area in terms of $n$.
+...and use it to rewrite area in terms of $n$ and $P$.
+
+$A(n) = \answer[given]{P^2\cot(\pi/n)/(4n)}$.
+
+\textbf{We recommend simplifying your area formula} so that it contains only one trig function. This will simplify finding its derivative.
 
 $A(n) = \answer[given]{P^2\cot(\pi/n)/(4n)}$.
 
 \bigskip
 
-What is the domain of $A(n)$? 
+What values of $n$ make sense? That is, what is the domain of $A(n)$ in the context of this problem? 
 
 \wordChoice{\choice{real numbers}\choice[correct]{integers}} \wordChoice{\choice[correct]{greater than or equal to}\choice{less than or equal to}} $\answer{3}$.
 
 \begin{freeResponse}
-In order to use calculus to find extreme values we need the function to be differentiable, which means it must at least be defined and continuous on an open interval. If we treat $A(n)$ as being defined on real numbers will any maximums or minimums we find still be maximums and minimums when we restrict $n$ to the integers? Why or why not?
+In order to use calculus to find extreme values we need the function to be differentiable, which means it must at least be defined and continuous on an open interval. If we extend $A(n)$ to be defined on $[3,\infty)$ will any maximums or minimums we find still be maximums and minimums when we restrict $n$ to the integers? Why or why not?
 \end{freeResponse}
 
 \bigskip
 
 \hspace{2cm}Now that we have $A(n)$ in terms of one variable we're ready to find the derivative! It may be helpful to simplify your formula for the area first. Rewrite it so that it only has one trig function.
 
-You will want to be able to copy and paste the derivative for later use. Write it in a separate text document, and paste it into the answer box below to check your work.
+\textbf{You will want to be able to copy and paste the derivative for later use}. Write it in a separate text document, and paste it into the answer box below to check your work.
 
-$A'(n) = P^2\,\answer[given]{((4\pi/n)\csc^2(\pi/n)-4\cot(\pi/n))/(16n^2)}$.
+$A'(n) = \answer[given]{P^2((4\pi/n)\csc^2(\pi/n)-4\cot(\pi/n))/(16n^2)}$.
 
 \end{problem}
 
 \bigskip
 
 \begin{problem}
-\hspace{2cm}Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where can critical points occur?
+\hspace{2cm}Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where do we look for critical points?
 \begin{selectAll}
-    \choice[correct]{Where $A'(n_0)$ is zero, for an interior point of the domain of $A(n)$.}
-    \choice{At endpoints of the domain of $A(n)$.}
-    \choice[correct]{Where $A'(n_0)$ does not exist for an interior point of the domain of $A(n)$.}
-    \choice{Where $A(n_0)$ is zero for an interior point of the domain of $A(n)$.}
+    \choice{Where $A(n_0)$ does not exist.}
+    \choice[correct]{Where $A'(n_0)$ does not exist.}
+    \choice{Where $A(n_0)$ is zero.}
+    \choice[correct]{Where $A'(n_0)$ is zero.}
+    \choice[correct]{At endpoints of the domain of $A(n)$}
+    \choice{At endpoints of the domain of $A'(n)$}
 \end{selectAll}
 \end{problem}
 
@@ -172,14 +180,7 @@ Where is $A'(n)=0$?
 \bigskip
 
 \begin{problem}
-So we found $\answer{0}$ critical points.\\
-Can $A(n)$ have any extreme values?\\
-\begin{multipleChoice}
-    \choice{No, extreme values always occur at critical points.}
-    \choice{No, $A(n)$ is always increasing so there cannot be any extreme values}
-    \choice{Yes, $A(n)$ can have a maximum at $n=0$}
-    \choice[correct]{Yes, extreme values can occur at endpoints too.}
-\end{multipleChoice}
+Recall that we extended the domain of $A(n)$ to $[3,\infty)$, so we have a critical point at $n= \answer[given]{3}$.
 \end{problem}
 
 \bigskip
@@ -187,7 +188,7 @@ Can $A(n)$ have any extreme values?\\
 \begin{problem}
 Since $A'(n)$ is always \wordChoice{\choice[correct]{positive}\choice{negative}}, $A(n)$ is always \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.\\
 \smallskip
-At the endpoint $n=3$ $A(n)$ has a \wordChoice{\choice{local maximum}\choice[correct]{local minimum}\choice{neither a max or a min}}\\
+At the endpoint $n=3$ $A(n)$ has a \wordChoice{\choice{local maximum}\choice[correct]{local minimum}\choice{neither a maximum nor a minimum}}\\
 \smallskip
 Intuitively, do you think that as $n \to \infty$ $A(n)$ can \wordChoice{\choice[correct]{increase}\choice{decrease}} without bound? \wordChoice{\choice{yes}\choice[correct]{no}}.\\ %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
 \end{problem}
