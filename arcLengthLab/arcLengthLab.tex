@@ -97,21 +97,35 @@ Therefore $y$ is \wordChoice {\choice[correct]{smooth}\choice{not smooth}} on $[
 
 Finally, we can write an integral to evaluate the arc length of the curve on the specified interval and evaluate it using technology: 
 
-Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{2\pi}} \sqrt{1+{\answer{}}^2} \ dx \approx \answer{}$ (Evaluate the arc length to 2 decimal places with technology)
+Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{2\pi}} \sqrt{1+{\answer{\cos(x)}^2}} \ dx \approx \answer{7.64}$ (Evaluate the arc length to 2 decimal places with technology)
+
+\begin{feedback}[correct]
+Our original approximation of this arc length with $n=4$ line segments was 7.45, which turns out to be pretty close to the exact value. 
+\end{feedback}
 
 
 \end{problem}
 \end{problem}
 \end{problem}
 
-Was your estimate for this arc length before close to the exact value?
-
-
-\vspace{1.5in}
+Let's try calculating the arc length of another function.  This time, you will be able to evaluate the resulting integral for arc length by hand using the techniques we've learned in class.
 
 %%Practice Problem 2 - Standard WRT x%%
 
-Find the exact arc length of $y = x^{\frac{3}{2}}$ from $x=0$ to $x=4$.  
+\begin{problem}
+
+Find the exact arc length of $y = x^{\frac{3}{2}}$ from $x=0$ to $x=4$.  First, we determine if $y$ is smooth on the x-interval $[0,4]$.  
+
+$y' = \answer{\frac{3}{2}\sqrt{x}}$, so $y$ is \wordChoice {\choice[correct]{smooth}\choice{not smooth}} on $[0,4]$ because \wordChoice {\choice{$y$ is continuous} \choice[correct]{$y'$ is continuous} \choice{$y$ is not continuous} \choice{$y'$ is not continuous}} on $[0,5]$.  
+
+\begin{problem}
+
+Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{5}} \answer{\sqrt{1+\frac{9x}{4}}} \ dx = \answer{\frac{8}{27}(10^{\frac{3}{2}})-1}$ (Evaluate the arc length exactly)
+
+\end{problem}
+
+\end{problem}
+
 
 \vspace{2.5 in}
 
