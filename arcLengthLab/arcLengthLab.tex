@@ -30,6 +30,8 @@ Unless stated otherwise, input answers in \underline{exact form} on this lab.
 
 %%Introduction%%
 
+\section {What is arc length and how can it be approximated?}
+
 In the last few weeks of math 160, you will learn about using definite integrals to calculate the areas of 2D regions and volumes of 3D regions.  Integrals can also be used to evaluate the arc length of a function.  Consider the function $f(x) = \sin(x)$ on the interval $[0,2\pi]$ as graphed below.  \\
 
 \begin{center} \includegraphics{sinx.png} \end{center}
@@ -64,12 +66,24 @@ $L_2 = \answer{1.86}$
 $L_3 = \answer{1.86}$
 $L_4 = \answer{1.86}$
 
-So the approximate arc length of $\sin(x)$ on $[0, 2\pi]$ is $\displaystyle\sum_{k=1}^4 L_k$ = $\answer{7.45}$.
+So the approximate arc length of $\sin(x)$ on $[0, 2\pi]$ is $\displaystyle\sum_{k=1}^4 L_k$ = $\answer{7.45}.$
 \end{problem}
 
-Of course, this is only an approximation of the arc length.  In order to get the \textbf{exact} arc length of $f(x) = \sin(x)$ on $[0, 2\pi]$, we will need to take a limit as the number of line segments we use ($n$) tends to infinity.  Namely, because an approximation with $n$ line segments will give an approximate arc length of $\displaystyle\sum_{k=1}^n L_k$, the exact arc length of $f(x)$ on $[0, 2\pi]$ is given by $\displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n L_k$.  Unfortunately, we can't evaluate this limit in its current form, so we'll need to write this in another form before we're done.  \\
+Of course, this is only an approximation of the arc length.  In order to get the \textbf{exact} arc length of $f(x) = \sin(x)$ on $[0, 2\pi]$, we will increase the number of line segments used, just as we did with Riemann sums to better approximate area.  To visualize what would happen to the approximation for the arc length of $f(x)=\sin(x)$ on the interval $[0,2\pi]$ as the number of line segments used increase, click on \href{https://www.desmos.com/calculator/lmz7n25cgl}{this link} and drag the slider for n.  Notice that as the number of line segments used increases, the sum of the lengths of these line segments is a much better approximation for the desired arc length.  However, to get the \textbf{exact} arc length, we will need to take the limit as the number of line segments used, $n$, tends to infinity.  \\
 
-Let's move away from $\sin(x)$ for a bit and try to find a formula for any function $f(x)$ on the interval $[a,b]$.  As with the sine example, we can partition the interval $[a,b]$ into $n$ equal length sub-intervals, $[a=x_0, x_1], [x_1, x_2], ..., [x_{n-1}, x_n = b]$.  On each of these sub-intervals, we will calculate the length of the corresponding line segment that approximates the arc length, using the picture below as a guide. 
+Namely, because an approximation with $n$ line segments will give an approximate arc length of 
+
+$$\displaystyle\sum_{k=1}^n L_k,$$ 
+
+the exact arc length of $f(x)$ on $[0, 2\pi]$ is given by 
+
+$$\displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n L_k.$$  
+
+Unfortunately, we can't evaluate this limit in its current form, so we'll need to write this in another form before we can evaluate this limit and arrive at a formula for the exact arc length.  \\
+
+\section {Deriving a formula for arc length}
+
+Let's move away from $\sin(x)$ for a bit and try to find a formula for the arc length of \textit{any} function $f(x)$ on the interval $[a,b].$  As with the sine example, we can partition the interval $[a,b]$ into $n$ equal length sub-intervals, $[a=x_0, x_1], [x_1, x_2], \cdots , [x_{n-1}, x_n = b].$  On each of these sub-intervals, we will calculate the length of the corresponding line segment that approximates the arc length, using the picture below as a guide. 
 
 %%L_k picture%%
 
