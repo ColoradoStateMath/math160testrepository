@@ -87,50 +87,65 @@ Let's move away from $\sin(x)$ for a bit and try to find a formula for the arc l
 
 \begin{center} \includegraphics{generalpythagorean.png} \end{center}
 
-The kth line segment being using to approximate the arc length has length $L_k$.  Let's find a way to re-write this length using the Pythagorean Theorem in hopes that this will help us evaluate the previous limit.  Similarly to before, let's denote the $x$-distance between the endpoints of the line segment as ${\Delta x}_k$ and the $y$-distance between these endpoints as ${\Delta y}_k$.  With this notation, $L_k = \sqrt{{{\Delta_x}_k}^2+{{\Delta y}_k}^2}$.  Therefore, 
+The kth line segment being using to approximate the arc length has length $L_k$.  Let's find a way to re-write this length using the Pythagorean Theorem in hopes that this will help us evaluate the previous limit.  Similarly to before, let's denote the $x$-distance between the endpoints of the line segment as ${\Delta x}_k$ and the $y$-distance between these endpoints as ${\Delta y}_k$.  With this notation, $L_k = \sqrt{{{\Delta x}_k}^2+{{\Delta y}_k}^2}$.  Therefore, 
 
-$$\text{Arc Length} \approx \displaystyle\sum_{k=1}^n L_k = \displaystyle\sum_{k=1}^n \sqrt{{{\Delta_x}_k}^2+{{\Delta y}_k}^2}.$$
+$$\text{Arc Length} \approx \displaystyle\sum_{k=1}^n L_k = \displaystyle\sum_{k=1}^n \sqrt{{{\Delta x}_k}^2+{{\Delta y}_k}^2}.$$
 
-However, we still cannot take the limit of this sum as $n \to \infty$.  To do this, we need to re-write this sum once again.  To do this, let's use the Mean Value Theorem (for derivatives) applied to the kth subinterval.  Recall that this theorem gives a condition under which the average rate of change of a function is equal to the instantaneous rate of change of a function: 
+However, we still cannot take the limit of this sum as $n \to \infty$.  Before we can take the limit, we need to re-write this sum once again, this time using the Mean Value Theorem (for derivatives) applied to the kth subinterval.  Recall that this theorem gives a condition under which the average rate of change of a function is equal to the instantaneous rate of change of a function.
 
-%%Turn this into a problem%%
-If $f(x)$ is CONTINUOUS on $[x_{k-1},x_k]$ and DIFFERNTIABLE on $(x_{k-1},x_k),$ then there is some value of $x$ in $(x_{k-1},x_k),$ we'll call it $c_k$, such that $\frac{\Delta x_k}{\Delta y_k} = f'(c_k).$  
+\begin{problem}
+Specifically, if $f(x)$ is \wordChoice{\choice[correct]{continuous}\choice{differentiable}\choice{integrable}} on $[x_{k-1},x_k]$ and \wordChoice{\choice{continuous}\choice[correct]{differentiable}\choice{integrable}} on $(x_{k-1},x_k),$ then there is some value of $x$ in $(x_{k-1},x_k),$ we'll call it $c_k$, such that equals the $\frac{\Delta x_k}{\Delta y_k} = f'(c_k).$ 
+\end{problem}
 
-Now, for each sub-interval (and therefore for each $k$), $\Delta y_k = f'(c_k) \Delta x_k,$
+Solving for $\Delta y_k$, we can now say that for each sub-interval (and therefore for each $k$), there exists a $c_k$ in $[c_{k-1}, c_k]$ such that
 
-$$\text{Arc Length} \approx \displaystyle\sum_{k=1}^n \sqrt{{{\Delta_x}_k}^2+{{\Delta y}_k}^2} = \displaystyle\sum_{k=1}^n \sqrt{{{\Delta_x}_k}^2 + {f'(c_k) \Delta x_k}^2} = \displaystyle\sum_{k=1}^n \sqrt{(1+{f'(c_k)}^2)(\Delta x _k)^2} = \displaystyle\sum_{k=1}^n \sqrt{(1+{f'(c_k)}^2)} \Delta x _k$$
+$$\Delta y_k = f'(c_k) \Delta x_k,$$
 
-With this, we have a summation that is similar to the Riemann sums we've calculated in the past and due to this multiplicative relationship between $\sqrt{(1+{f'(c_k)}^2)}$ and $\Delta x _k$, we can finally take the limit of this sum as $n \to \infty:$
+which allows us to re-write our previous arc length formula as follows:
 
-$$\text{Arc Length} = \displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n \sqrt{(1+{f'(c_k)}^2)} \Delta x _k = \displaystyle\int_{a}^{b} \sqrt{1+{f'(x)}^2} \ dx$$
+\begin{align*}
+\text{Arc Length} &\approx \displaystyle\sum_{k=1}^n \sqrt{{{\Delta x}_k}^2+{{\Delta y}_k}^2} \\
+&= \displaystyle\sum_{k=1}^n \sqrt{{{\Delta x}_k}^2 + (f'(c_k) \Delta x_k)^2} \\
+&= \displaystyle\sum_{k=1}^n \sqrt{(1+(f'(c_k))^2)(\Delta x _k)^2} \\
+&= \displaystyle\sum_{k=1}^n \sqrt{1+(f'(c_k))^2} \Delta x _k.
+\end{align*}
 
-In order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives), so this formula only applies to functions that are continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+{f'(x)}^2}$ must be integrable or we can't evaluate the above integral, so $\sqrt{1+{f'(x)}^2}$ must be continuous.  This occurs precisely when $f'(x)$ is continuous, so this formula can only be used when $f'(x)$ is continuous on $[a,b]$.  Summarizing the above conversation, using this formula requires that: 
+Finally, we have a summation that is similar to the Riemann sums we've calculated in the past in that there is a multiplicative relationship between $\sqrt{1+{f'(c_k)}^2}$ and $\Delta x _k$.  This means we know how to take the limit of this sum as $n \to \infty$ in order to get the exact value of the arc length of $f(x)$ on $[a,b]:$
 
-\begin{enumerate}
+\begin{align*}
+\text{Arc Length} &= \displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n \sqrt{(1+(f'(c_k))^2)} \Delta x _k \\ 
+&= \displaystyle\int_{a}^{b} \sqrt{1+(f'(x))^2} \ dx .
+\end{align*}
+
+What types of functions will this formula apply to?  Well, in order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives), which only applies to functions that are continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+(f'(x))^2}$ must be integrable or we can't evaluate the above integral, so $\sqrt{1+{f'(x)}^2}$ must be continuous.  This occurs precisely when $f'(x)$ is continuous, which means this formula can only be used when $f'(x)$ is continuous on $[a,b]$.  Summarizing the above conversation, using this formula requires that: 
+
+\begin{itemize}
 
 \item $f$ is continuous on $[a,b],$
 \item $f$ is differentiable on $(a,b),$ and
 \item $f'$ is continuous on $[a,b]$.
 
-\end{enumerate}
+\end{itemize}
 
-However, the condition that $f'(x)$ be continuous on $[a,b]$ implies all of this others, so this is the only condition we need.  This is a very common condition to want to impose, so it is given a name.  
+However, the condition that $f'(x)$ be continuous on $[a,b]$ implies all of the others, so this is the only condition we need.  This is a very common condition to assume a function satisfies, so functions that satisfy this conditions are given a name.  
 
-Definition: Smooth Function
-$f(x)$ is a smooth function on $[a,b]$ if $f'(x)$ is continuous on $[a,b].$
+\begin{definition}
+A function $f(x)$ is \dfn{smooth} on the interval $[a,b]$ when $f'(x)$ is continuous on $[a,b].$
+\end{definition}
 
-NOTE: If continuous function are considered \textit{nice} functions, then smooth functions are the \textit{very nice} functions.  If you continue learning calculus, you are likely to see smoothness as a hypothesis of many more theorems to come.  
+If continuous function are considered \textit{nice} functions, then smooth functions are the \textit{very nice} functions.  If you continue learning calculus, you are likely to see smoothness as a hypothesis of many more theorems to come, starting with the following theorem. 
 
-Formula for Arc Length: 
-
+\begin{theorem}[Formula for Arc Length of Smooth Functions]
 If $f(x)$ is a smooth function on $[a,b],$ then the arc length of $f(x)$ on the interval $[a,b]$ is equal to 
 
-$$\displaystyle\int_{a}^{b} \sqrt{1+{f'(x)}^2} \ dx$$
+$$\displaystyle\int_{a}^{b} \sqrt{1+(f'(x))^2} \ dx$$
+
+\end{theorem}
 
 
 %%Practice Problem 1 - Checking sinx Estimate%%
 
-Now that we have derived a formula for the arc length of a curve on a particular interval, let's use this formula to determine the arc length of $y=\sin(x)$ on the interval $[0,2\pi]$.  Of course, before using this formula, we must verify that $y=\sin(x)$ is smooth on $[0,2\pi]$.
+Now that we have derived a formula for the arc length of a curve on a particular interval, let's use this formula to determine the exact arc length of $y=\sin(x)$ on the interval $[0,2\pi]$.  Of course, before using this formula, we must verify that $y=\sin(x)$ is smooth on $[0,2\pi]$.
 
 \begin{problem}
 
@@ -174,8 +189,12 @@ Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{4}} \answer{\sqrt{1+\frac{
 
 The formula for arc length that we derived earlier also applies to function of $y$ as long as one integrates with respect to y, rather than x.  
 
-INSERT FORMULA HERE...but with respect to y. 
+\begin{theorem}[Formula for Arc Length of Smooth Functions (of y)]
+If $g(y)$ is a smooth function on $[a,b],$ then the arc length of $g(y)$ on the y-interval $[a,b]$ is equal to 
 
+$$\displaystyle\int_{a}^{b} \sqrt{1+(g'(y))^2} \ dy$$
+
+\end{theorem}
 
 Here's an example.  
 
