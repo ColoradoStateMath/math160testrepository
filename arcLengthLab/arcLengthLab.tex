@@ -179,15 +179,15 @@ $y' = \answer{\frac{3}{2}\sqrt{x}},$ so $y$ is \wordChoice{\choice[correct]{smoo
 
 \begin{problem}
 
-Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{4}} \answer{\sqrt{1+\frac{9x}{4}}} \ dx = \answer{\frac{8}{27}(10^{\frac{3}{2}}-1)} \approx 9.07$ (Evaluate the arc length exactly)
+Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{4}} \answer{\sqrt{1+\frac{9x}{4}}} \ dx = \answer{\frac{8}{27}(10^{\frac{3}{2}}-1)} \ \approx 9.07$ (Evaluate the arc length exactly)
 
 \end{problem}
 \end{problem}
 
-The formula for arc length that we derived earlier also applies to function of $y$ as long as one integrates with respect to y, rather than x.  
+The formula for arc length that we derived earlier also applies to functions of $y$ as long as one integrates with respect to y, rather than x.  
 
 \begin{theorem}[Formula for Arc Length of Smooth Functions (of y)]
-If $g(y)$ is a smooth function on $[a,b],$ then the arc length of $g(y)$ on the y-interval $[a,b]$ is equal to 
+If $g(y)$ is a smooth function on the y-interval $[a,b],$ then the arc length of $g(y)$ on $[a,b]$ is equal to 
 
 $$\displaystyle\int_{a}^{b} \sqrt{1+(g'(y))^2} \ dy$$
 
@@ -233,9 +233,9 @@ Written as a function of $y$, $f$ becomes $x = \answer{2y^{\frac{3}{2}}}$ and th
 From this, we see that $x' = \answer{3\sqrt{y}}$, so $x$ is \wordChoice {\choice[correct]{smooth}\choice{not smooth}} on $[0,1]$.  
 
 \begin{problem}
-Now we can use the arc length formula (\textbf{with respect to y}) in order to evaluate the arc length of $f(x)$ on the originally specified $x$-interval. 
+Now we can use the arc length formula (\textbf{with respect to y}) in order to evaluate the desired arc length of $f(x).$
 
-Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{1}} \answer{\sqrt{1+9y}} \ d\answer{y} = \answer{\frac{2}{27}(10^{\frac{3}{2}}-1)}$ (Evaluate the arc length exactly)
+Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{1}} \answer{\sqrt{1+9y}} \ d\answer{y} = \answer{\frac{2}{27}(10^{\frac{3}{2}}-1)} \ \approx 2.27$ (Evaluate the arc length exactly)
 
 \end{problem}
 \end{problem}
@@ -246,8 +246,10 @@ Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{1}} \answer{\sqrt{1+9y}} \
 
 Let's try one last arc length problem involving a non-smooth function.  Let's determine the exact arc length of $f(x) = \sqrt{9-x^2}$ on the interval $[-3,3]$, the graph of which is displayed below.
 
+\begin{center} \includegraphics{semicircle.png} \end{center}
+
 \begin{problem}
-First off, notice that $f(x)$ is not smooth on $[-3,3]$ because 
+First off, notice that $f(x)$ is not smooth on $[-3,3]$ because (select all that apply)
 \begin{selectAll}
     \choice{f(-3) does not exist.}
     \choice{f(3) does not exist.}
@@ -260,13 +262,13 @@ First off, notice that $f(x)$ is not smooth on $[-3,3]$ because
 \end{selectAll}
 \end{problem}
 
-Because $f$ isn't smooth on $[-3,3]$, the arc length formula does not apply.  Why not?  Well, $f'(x) = -\frac{x}{\sqrt{9-x^2}}$, so if the arc length formula did apply, we would need to evaluate 
+Since $f$ isn't smooth on $[-3,3]$, the arc length formula does not apply.  Why not?  Well, $f'(x) = -\frac{x}{\sqrt{9-x^2}}$, so if the arc length formula did apply, we would need to evaluate 
 
 $$\displaystyle\int_{-3}^{3} \sqrt{1+\frac{x^2}{9-x^2}} \ dx.$$ 
 
-This integrand of this integral has the following graph on the interval $[-3,3].$  \\
+The integrand of the above integral has the following graph on the interval $[-3,3].$  \\
 
-INSERT GRAPH HERE
+\begin{center} \includegraphics{asymptotes.png} \end{center}
 
 Notice that this integrand has vertical asymptotes at $x=-3$ and $x=3$, so there is no guarantee that the area bounded between $\sqrt{1+\frac{x^2}{9-x^2}}$ and the $x$-axis will converge to a particular number.  In other words, it's possible that this integral cannot be evaluated, despite the fact that the arc length of $f(x)$ can certainly be calculated - $f(x)$ is the graph of a semi-circle after all.  This is one instance of why the arc length formula can only be applied when $f(x)$ is smooth on $[-3,3]$.  Luckily, because $f$ is semi-circular, we do not need calculus to find its arc length. 
 
