@@ -65,20 +65,49 @@ So the approximate arc length of $\sin(x)$ on $[0, 2\pi]$ is $\displaystyle\sum_
 
 Of course, this is only an approximation of the arc length.  In order to get the \textbf{exact} arc length of $f(x) = \sin(x)$ on $[0, 2\pi]$, we will need to take a limit as the number of line segments we use ($n$) tends to infinity.  Namely, because an approximation with $n$ line segments will give an approximate arc length of $\displaystyle\sum_{k=1}^n L_k$, the exact arc length of $f(x)$ on $[0, 2\pi]$ is given by $\displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n L_k$.  Unfortunately, we can't evaluate this limit in its current form, so we'll need to write this in another form before we're done.  \\
 
-Let's move away from $\sin(x)$ for a bit and try to find a formula for any function $f(x)$ on the interval $[a,b]$.  As with the sine example, we can partition the interval $[a,b]$ into $n$ equal length sub-intervals, $[a=x_0, x_1], [x_1, x_2], ..., [x_{n-1}, x_n = b]$.  On each of these sub-intervals, we will calculate the length of the corresponding line segment that approximates the arc length.
+Let's move away from $\sin(x)$ for a bit and try to find a formula for any function $f(x)$ on the interval $[a,b]$.  As with the sine example, we can partition the interval $[a,b]$ into $n$ equal length sub-intervals, $[a=x_0, x_1], [x_1, x_2], ..., [x_{n-1}, x_n = b]$.  On each of these sub-intervals, we will calculate the length of the corresponding line segment that approximates the arc length, using the picture below as a guide. 
 
-\begin{problem}
-Let's say that we're working on the $k$th sub-interval, $[x_{k-1}, x_k]$.  The endpoints on the line segment on this interval are the points 
-\begin{selectAll}
-    \choice{Where $A(n_0)$ does not exist.}
-    \choice[correct]{Where $A'(n_0)$ does not exist.}
-    \choice{Where $A(n_0)$ is zero.}
-    \choice[correct]{Where $A'(n_0)$ is zero.}
-    \choice[correct]{At endpoints of the domain of $A(n)$}
-    \choice{At endpoints of the domain of $A'(n)$}
-\end{selectAll}
-\end{problem}
+%%L_k picture%%
 
+The kth line segment being using to approximate the arc length has length $L_k$.  Let's find a way to re-write this length using the Pythagorean Theorem in hopes that this will help us evaluate the previous limit.  Similarly to before, let's denote the $x$-distance between the endpoints of the line segment as ${\Delta x}_k$ and the $y$-distance between these endpoints as ${\Delta y}_k$.  With this notation, $L_k = \sqrt{{{\Delta_x}_k}^2+{{\Delta y}_k}^2}$.  Therefore, 
+
+$$\text{Arc Length} \approx \displaystyle\sum_{k=1}^n L_k = \displaystyle\sum_{k=1}^n \sqrt{{{\Delta_x}_k}^2+{{\Delta y}_k}^2}.$$
+
+However, we still cannot take the limit of this sum as $n \to \infty$.  To do this, we need to re-write this sum once again.  To do this, let's use the Mean Value Theorem (for derivatives) applied to the kth subinterval.  Recall that this theorem gives a condition under which the average rate of change of a function is equal to the instantaneous rate of change of a function: 
+
+%%Turn this into a problem%%
+If $f(x)$ is CONTINUOUS on $[x_{k-1},x_k]$ and DIFFERNTIABLE on $(x_{k-1},x_k),$ then there is some value of $x$ in $(x_{k-1},x_k),$ we'll call it $c_k$, such that $\frac{\Delta x_k}{\Delta y_k} = f'(c_k).$  
+
+Now, for each sub-interval (and therefore for each $k$), $\Delta y_k = f'(c_k) \Delta x_k,$
+
+$$\text{Arc Length} \approx \displaystyle\sum_{k=1}^n \sqrt{{{\Delta_x}_k}^2+{{\Delta y}_k}^2} = \displaystyle\sum_{k=1}^n \sqrt{{{\Delta_x}_k}^2 + {f'(c_k) \Delta x_k}^2} = \displaystyle\sum_{k=1}^n \sqrt{(1+{f'(c_k)}^2)(\Delta x _k)^2} = \displaystyle\sum_{k=1}^n \sqrt{(1+{f'(c_k)}^2)} \Delta x _k$$
+
+With this, we have a summation that is similar to the Riemann sums we've calculated in the past and due to this multiplicative relationship between $\sqrt{(1+{f'(c_k)}^2)}$ and $\Delta x _k$, we can finally take the limit of this sum as $n \to \infty:$
+
+$$\text{Arc Length} = \displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n \sqrt{(1+{f'(c_k)}^2)} \Delta x _k = \displaystyle\int_{a}^{b} \sqrt{1+{f'(x)}^2} \ dx$$
+
+In order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives), so this formula only applies to functions that are continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+{f'(x)}^2}$ must be integrable or we can't evaluate the above integral, so $\sqrt{1+{f'(x)}^2}$ must be continuous.  This occurs precisely when $f'(x)$ is continuous, so this formula can only be used when $f'(x)$ is continuous on $[a,b]$.  Summarizing the above conversation, using this formula requires that: 
+
+\begin{enumerate}
+
+\item $f$ is continuous on $[a,b],$
+\item $f$ is differentiable on $(a,b),$ and
+\item $f'$ is continuous on $[a,b]$.
+
+\end{enumerate}
+
+However, the condition that $f'(x)$ be continuous on $[a,b]$ implies all of this others, so this is the only condition we need.  This is a very common condition to want to impose, so it is given a name.  
+
+Definition: Smooth Function
+$f(x)$ is a smooth function on $[a,b]$ if $f'(x)$ is continuous on $[a,b].$
+
+NOTE: If continuous function are considered \textit{nice} functions, then smooth functions are the \textit{very nice} functions.  If you continue learning calculus, you are likely to see smoothness as a hypothesis of many more theorems to come.  
+
+Formula for Arc Length: 
+
+If $f(x)$ is a smooth function on $[a,b],$ then the arc length of $f(x)$ on the interval $[a,b]$ is equal to 
+
+$$\displaystyle\int_{a}^{b} \sqrt{1+{f'(x)}^2} \ dx$$
 
 
 %%Practice Problem 1 - Checking sinx Estimate%%
@@ -137,7 +166,7 @@ Here's an example.
 \begin{problem}
 Find the arc length of $x = \frac{2}{3} (y-1)^{\frac{3}{2}}$ from $y=1$ to $y=4$.  As usual, we must first check that this function of $y$ is smooth on the $y$-interval $[1,4]$.  
 
-$x' = \sqrt{y-1}$, so $x$ is \wordChoice{\choice[correct]{smooth}\choice{not smooth}} on the y-interval $[1,4]$.
+$x' = \answer{\sqrt{y-1}},$ so $x$ is \wordChoice{\choice[correct]{smooth}\choice{not smooth}} on the y-interval $[1,4]$.
 
 \begin{problem}
 Therefore, because $x$ is smooth, we can determine its arc length on $[1,4]$.
@@ -202,6 +231,8 @@ Because $f$ isn't smooth on $[-3,3]$, the arc length formula does not apply.  Wh
 $$\displaystyle\int_{-3}^{3} \sqrt{1+\frac{x^2}{9-x^2}} \ dx.$$ 
 
 This integrand of this integral has the following graph on the interval $[-3,3].$  \\
+
+INSERT GRAPH HERE
 
 Notice that this integrand has vertical asymptotes at $x=-3$ and $x=3$, so there is no guarantee that the area bounded between $\sqrt{1+\frac{x^2}{9-x^2}}$ and the $x$-axis will converge to a particular number.  In other words, it's possible that this integral cannot be evaluated, despite the fact that the arc length of $f(x)$ can certainly be calculated - $f(x)$ is the graph of a semi-circle after all.  This is one instance of why the arc length formula can only be applied when $f(x)$ is smooth on $[-3,3]$.  Luckily, because $f$ is semi-circular, we do not need calculus to find its arc length. 
 
