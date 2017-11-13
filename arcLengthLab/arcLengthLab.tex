@@ -32,7 +32,7 @@ Unless stated otherwise, input answers in \underline{exact form} on this lab.
 
 \section {What is arc length and how can it be approximated?}
 
-In the last few weeks of math 160, you will learn about using definite integrals to calculate the areas of 2D regions and volumes of 3D regions.  Integrals can also be used to evaluate the arc length of a function.  Consider the function $f(x) = \sin(x)$ on the interval $[0,2\pi]$ as graphed below.  \\
+In the last few weeks of math 160, you will learn about using definite integrals to calculate the areas of 2D regions and volumes of 3D regions.  Integrals can also be used to evaluate the arc length of a function.  Consider the function $f(x) = \sin(x)$ on the interval $[0,2\pi],$ which is graphed below.  \\
 
 \begin{center} \includegraphics{sinx.png} \end{center}
 
@@ -43,9 +43,9 @@ At some point in your math education, you probably learned how to calculate the 
 \begin{center} \includegraphics{2x.png} \end{center}
 
 \begin{problem}
-Let's first find the arc length of $y$ on the interval $[0,1]$.  Ultimately, this question is equivalent to finding the length of the line segment of $y$ that lies in $[0,1]$, and we know how to find the distance of line segments!  \\ 
+Let's first find the arc length of $y$ on the interval $[0,1]$.  Ultimately, this question is equivalent to finding the length of the line segment of $y$ that lies in $[0,1],$ and we know how to find the distance of line segments!  \\ 
 
-The endpoints of this line segment are $(0,\answer{0})$ and $(1,\answer{2}),$ so the $x$-distance between these endpoints is $\Delta x = \answer{1}$ and the $y$-distance between these endpoints is $\Delta y = \answer{2}.$  Forming a right triangle with this line segment of $y = 2x$ as a hypotenuse and legs with lengths $\Delta x$ and $\Delta y$  and then using the Pythagorean Theorem tells us that the distance of this line segment and therefore the arc length of $y = 2x$ on the interval $[0,1]$ is $\sqrt{{\answer{1}}^2+{\answer{2}}^2} = \answer{\sqrt{5}}.$
+The endpoints of this line segment are $(0,\answer{0})$ and $(1,\answer{2}),$ so the $x$-distance between these endpoints is $\Delta x = \answer{1}$ and the $y$-distance between these endpoints is $\Delta y = \answer{2}.$  Now, notice that a right triangle can be formed with this line segment as a hypotenuse and legs with lengths $\Delta x$ and $\Delta y$, respectively.  Now that we have formed right triangle, the the Pythagorean Theorem tells us that the length of this line segment and therefore the arc length of $y = 2x$ on the interval $[0,1]$ is $\sqrt{{\answer{1}}^2+{\answer{2}}^2} = \answer{\sqrt{5}}.$
 \end{problem}
 
 \begin{problem}
@@ -66,7 +66,7 @@ $L_2 = \answer{1.86}$
 $L_3 = \answer{1.86}$
 $L_4 = \answer{1.86}$
 
-So the approximate arc length of $\sin(x)$ on $[0, 2\pi]$ is $\displaystyle\sum_{k=1}^4 L_k$ = $\answer{7.45}.$
+So the approximate arc length of $\sin(x)$ on $[0, 2\pi]$ to 2 decimal places is $\displaystyle\sum_{k=1}^4 L_k$ = $\answer[tolerance=0.01]{7.45}.$
 \end{problem}
 
 Of course, this is only an approximation of the arc length.  In order to get the \textbf{exact} arc length of $f(x) = \sin(x)$ on $[0, 2\pi]$, we will increase the number of line segments used, just as we did with Riemann sums to better approximate area.  To visualize what would happen to the approximation for the arc length of $f(x)=\sin(x)$ on the interval $[0,2\pi]$ as the number of line segments used increase, click on \href{https://www.desmos.com/calculator/lmz7n25cgl}{this link} and drag the slider for n.  Notice that as the number of line segments used increases, the sum of the lengths of these line segments is a much better approximation for the desired arc length.  However, to get the \textbf{exact} arc length, we will need to take the limit as the number of line segments used, $n$, tends to infinity.  \\
@@ -77,13 +77,13 @@ $$\displaystyle\sum_{k=1}^n L_k,$$
 
 the exact arc length of $f(x)$ on $[0, 2\pi]$ is given by 
 
-$$\displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n L_k.$$  
+$$\text{Arc Length} = \displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n L_k.$$  
 
 Unfortunately, we can't evaluate this limit in its current form, so we'll need to write this in another form before we can evaluate this limit and arrive at a formula for the exact arc length.  \\
 
 \section {Deriving a formula for arc length}
 
-Let's move away from $\sin(x)$ for a bit and try to find a formula for the arc length of \textit{any} function $f(x)$ on the interval $[a,b].$  As with the sine example, we can partition the interval $[a,b]$ into $n$ equal length sub-intervals, $[a=x_0, x_1], [x_1, x_2], \cdots , [x_{n-1}, x_n = b].$  On each of these sub-intervals, we will calculate the length of the corresponding line segment that approximates the arc length, using the picture below as a guide.  
+Let's move away from $\sin(x)$ for a bit and try to find a formula for the arc length of \textit{any} function $f(x)$ on the interval $[a,b].$  As with the sine example, we can partition the interval $[a,b]$ into $n$ equal length sub-intervals, $[a=x_0, x_1], [x_1, x_2], \cdots , [x_{n-1}, x_n = b].$  We will calculate the length of the corresponding line segment that approximates the arc length of $f(x)$ on the kth sub-interval, using the picture below as a guide.  
 
 \begin{center} \includegraphics{generalpythagorean.png} \end{center}
 
@@ -97,7 +97,7 @@ However, we still cannot take the limit of this sum as $n \to \infty$.  Before w
 Specifically, if $f(x)$ is \wordChoice{\choice[correct]{continuous}\choice{differentiable}\choice{integrable}} on $[x_{k-1},x_k]$ and \wordChoice{\choice{continuous}\choice[correct]{differentiable}\choice{integrable}} on $(x_{k-1},x_k),$ then there is some value of $x$ in $(x_{k-1},x_k),$ we'll call it $c_k$, such that $\frac{\Delta x_k}{\Delta y_k} = f'(c_k).$ 
 \end{problem}
 
-Solving for $\Delta y_k$, we can now say that on each sub-interval, there exists a $c_k$ in $[c_{k-1}, c_k]$ such that
+Solving for $\Delta y_k$, we can now say that on \textbf{every} sub-interval (all $n$ of them), there exists a $c_k$ in $[x_{k-1}, x_k]$ such that
 
 $$\Delta y_k = f'(c_k) \Delta x_k,$$
 
@@ -110,14 +110,14 @@ which allows us to re-write our previous arc length formula as follows:
 &= \displaystyle\sum_{k=1}^n \sqrt{1+(f'(c_k))^2} \Delta x _k.
 \end{align*}
 
-Finally, we have a summation that is similar to the Riemann sums we've calculated in the past in that there is a multiplicative relationship between $\sqrt{1+{f'(c_k)}^2}$ and $\Delta x _k$.  This multiplicative relationship signals that the limit of this sum as $n \to \infty$ is equal to a definite integral!  So, in order to get the exact value of the arc length of $f(x)$ on $[a,b]:$
+Finally, we have a summation that is similar to the Riemann sums we've calculated in the past in that there is a multiplicative relationship between $\sqrt{1+{f'(c_k)}^2}$ and $\Delta x _k$.  This multiplicative relationship signals that the limit of this sum as $n \to \infty$ is equal to a definite integral!  This means that the arc length of $f(x)$ on $[a,b]$ is given by
 
 \begin{align*}
-\text{Arc Length} &= \displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n \sqrt{(1+(f'(c_k))^2)} \Delta x _k \\ 
+\text{Arc Length} &= \displaystyle\lim_{n \to \infty} \displaystyle\sum_{k=1}^n \sqrt{1+(f'(c_k))^2} \Delta x _k \\ 
 &= \displaystyle\int_{a}^{b} \sqrt{1+(f'(x))^2} \ dx .
 \end{align*}
 
-What types of functions will this formula apply to?  Well, in order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives) to each sub-interval, which required that $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+(f'(x))^2}$ must be integrable or we can't evaluate the above integral, so $\sqrt{1+{f'(x)}^2}$ must be continuous.  This occurs precisely when $f'(x)$ is continuous, which means this formula can only be used when $f'(x)$ is continuous on $[a,b]$.  Summarizing the above conversation, using this formula requires that: 
+What types of functions will this formula apply to?  Well, in order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives) to each sub-interval, which required that $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+(f'(x))^2}$ must be integrable or we cannot necessarily evaluate the above integral, so $\sqrt{1+{f'(x)}^2}$ must be continuous.  This occurs precisely when $f'(x)$ is continuous, which means the above arc length formula can only be used when $f'(x)$ is continuous on $[a,b]$.  In summary, using this formula requires that: 
 
 \begin{itemize}
 
@@ -158,13 +158,9 @@ Therefore $y$ is \wordChoice {\choice[correct]{smooth}\choice{not smooth}} on $[
 
 \begin{problem}
 
-Finally, we can write an integral to evaluate the arc length of the curve on the specified interval and evaluate it using technology: 
+Finally, we can write an integral to evaluate the arc length of the curve on the specified interval and evaluate it using technology.  Our original approximation of this arc length with $n=4$ line segments was 7.45, which turns out to be pretty close to the exact value.  
 
 Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{2\pi}} \sqrt{1+{\answer{\cos(x)}^2}} \ dx \approx \answer{7.64}$ (Evaluate the arc length to 2 decimal places with technology)
-
-\begin{feedback}[correct]
-Our original approximation of this arc length with $n=4$ line segments was 7.45, which turns out to be pretty close to the exact value. 
-\end{feedback}
 
 
 \end{problem}
@@ -179,11 +175,11 @@ Let's try calculating the arc length of another function.  This time, you will b
 
 Find the exact arc length of $y = x^{\frac{3}{2}}$ from $x=0$ to $x=4$.  First, we determine if $y$ is smooth on the x-interval $[0,4]$.  
 
-$y' = \answer{\frac{3}{2}\sqrt{x}}$, so $y$ is \wordChoice{\choice[correct]{smooth}\choice{not smooth}} on $[0,4]$ because \wordChoice{\choice{$y$ is continuous} \choice[correct]{$y'$ is continuous} \choice{$y$ is not continuous} \choice{$y'$ is not continuous}} on $[0,4]$.  
+$y' = \answer{\frac{3}{2}\sqrt{x}},$ so $y$ is \wordChoice{\choice[correct]{smooth}\choice{not smooth}} on $[0,4]$ because \wordChoice{\choice{$y$ is continuous} \choice[correct]{$y'$ is continuous} \choice{$y$ is not continuous} \choice{$y'$ is not continuous}} on $[0,4]$.  
 
 \begin{problem}
 
-Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{4}} \answer{\sqrt{1+\frac{9x}{4}}} \ dx = \answer{\frac{8}{27}(10^{\frac{3}{2}})-1}$ (Evaluate the arc length exactly)
+Arc Length = $\displaystyle\int_{\answer{0}}^{\answer{4}} \answer{\sqrt{1+\frac{9x}{4}}} \ dx = \answer{\frac{8}{27}(10^{\frac{3}{2}}-1)} \approx 9.07$ (Evaluate the arc length exactly)
 
 \end{problem}
 \end{problem}
