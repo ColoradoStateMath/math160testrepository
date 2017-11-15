@@ -94,7 +94,7 @@ $$\text{Arc Length} \approx \displaystyle\sum_{k=1}^n L_k = \displaystyle\sum_{k
 However, we still cannot take the limit of this sum as $n \to \infty$.  Before we can take the limit, we need to re-write this sum once again, this time using the Mean Value Theorem (for derivatives) applied to the kth subinterval.  Recall that this theorem gives a condition under which the average rate of change of a function is equal to the instantaneous rate of change of a function.
 
 \begin{problem}
-Specifically, if $f(x)$ is \wordChoice{\choice[correct]{continuous}\choice{differentiable}\choice{integrable}} on $[x_{k-1},x_k]$ and \wordChoice{\choice{continuous}\choice[correct]{differentiable}\choice{integrable}} on $(x_{k-1},x_k),$ then there is some value of $x$ in $(x_{k-1},x_k),$ we'll call it $c_k$, such that $\frac{\Delta x_k}{\Delta y_k} = f'(c_k).$ 
+Specifically, if $f(x)$ is \wordChoice{\choice[correct]{continuous}\choice{differentiable}\choice{integrable}} on $[x_{k-1},x_k]$ and \wordChoice{\choice{continuous}\choice[correct]{differentiable}\choice{integrable}} on $(x_{k-1},x_k),$ then there is some value of $x$ in $(x_{k-1},x_k),$ we'll call it $c_k$, such that $\frac{\Delta y_k}{\Delta x_k} = f'(c_k).$ 
 \end{problem}
 
 Solving for $\Delta y_k$, we can now say that on \textbf{every} sub-interval (all $n$ of them), there exists a $c_k$ in $[x_{k-1}, x_k]$ such that
@@ -117,7 +117,7 @@ Finally, we have a summation that is similar to the Riemann sums we've calculate
 &= \displaystyle\int_{a}^{b} \sqrt{1+(f'(x))^2} \ dx .
 \end{align*}
 
-What types of functions will this formula apply to?  Well, in order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives) to each sub-interval, which required that $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+(f'(x))^2}$ must be integrable or we cannot necessarily evaluate the above integral, so one way to guarantee integrability is to require that $\sqrt{1+{f'(x)}^2}$ is continuous, which occurs precisely when $f'(x)$ is continuous.  Therefore, the above arc length formula applies when $f'(x)$ is continuous on $[a,b]$.  In summary, using this formula requires that: 
+What types of functions will this formula apply to?  Well, in order to arrive at this formula for arc length, we had to apply the Mean Value Theorem (for derivatives) to each sub-interval, which required that $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b).$  Additionally, $\sqrt{1+(f'(x))^2}$ must be integrable or we cannot necessarily evaluate the above integral, so one way to guarantee integrability is to require that $\sqrt{1+{f'(x)}^2}$ is continuous, which occurs precisely when $f'(x)$ is continuous.  Therefore, the above arc length formula applies when $f'(x)$ is continuous on $[a,b]$.  In summary, this formula will apply when 
 
 \begin{itemize}
 
@@ -133,7 +133,7 @@ However, the condition that $f'(x)$ be continuous on $[a,b]$ implies all of the 
 A function $f(x)$ is \dfn{smooth} on the interval $[a,b]$ when $f'(x)$ is continuous on $[a,b].$
 \end{definition}
 
-The reason we call such function \textit{smooth} is because if $f'(x)$ is continuous, then the graph of $f$ will have no discontinuities, corners, or cusps.  If continuous function are considered \textit{nice} functions, then smooth functions are \textit{very nice} functions - after all, not having to worry about corners or cusps in $f$ makes our lives much easier.  If you continue learning calculus, you are likely to see smoothness as a hypothesis of many more theorems to come, starting with the following theorem. 
+The reason we call such function \textit{smooth} is because if $f'(x)$ is continuous, then the graph of $f$ will have no discontinuities, corners, or cusps.  If continuous function are considered \textit{nice} functions, then smooth functions are \textit{very nice} functions - after all, not having to worry about corners or cusps in $f$ makes our lives much, much easier.  If you continue learning calculus, you are likely to see smoothness as a hypothesis of many more theorems to come, starting with the following theorem. 
 
 \begin{theorem}[Formula for Arc Length of Smooth Functions]
 If $f(x)$ is a smooth function on $[a,b],$ then the arc length of $f(x)$ on the interval $[a,b]$ is equal to 
@@ -147,7 +147,7 @@ Because $\frac{dy}{dx} = f'(x),$ the above formula could also be written as
 
 $$\displaystyle\int_{a}^{b} \sqrt{1+\left(\frac{dy}{dx}\right)^2} \ dx.$$ 
 
-In fact, when you return to calculating arc lengths in calculus II, you are more likely to see this version of the formula, so be aware that this is the same formula, just written using a different notation for the derivative.
+Be aware that this is the same formula, just written using a different notation for the derivative.  In fact, if you take calculus II, you will return to calculating arc lengths, and you are more likely to see this version of the arc length formula.  
 \end{warning}
 
 \section{Practice calculating arc lengths}
